@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7997C04-E3F7-4A11-8B86-C04B1CE95EB8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NWaveNetFrame</RootNamespace>
+    <AssemblyName>NWaveNetFrame</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\ByteConverter.cs" />
+    <Compile Include="Audio\Channels.cs" />
+    <Compile Include="Audio\Interfaces\IAudioContainer.cs" />
+    <Compile Include="Audio\Interfaces\IAudioPlayer.cs" />
+    <Compile Include="Audio\Interfaces\IAudioRecorder.cs" />
+    <Compile Include="Audio\Mci\Mci.cs" />
+    <Compile Include="Audio\Mci\MciAudioPlayer.cs" />
+    <Compile Include="Audio\Mci\MciAudioRecorder.cs" />
+    <Compile Include="Audio\WaveFile.cs" />
+    <Compile Include="Audio\WaveFormat.cs" />
+    <Compile Include="Effects\AudioEffect.cs" />
+    <Compile Include="Effects\AutowahEffect.cs" />
+    <Compile Include="Effects\ChorusEffect.cs" />
+    <Compile Include="Effects\DelayEffect.cs" />
+    <Compile Include="Effects\DistortionEffect.cs" />
+    <Compile Include="Effects\EchoEffect.cs" />
+    <Compile Include="Effects\FlangerEffect.cs" />
+    <Compile Include="Effects\MorphEffect.cs" />
+    <Compile Include="Effects\OverdriveEffect.cs" />
+    <Compile Include="Effects\PhaserEffect.cs" />
+    <Compile Include="Effects\PitchShiftEffect.cs" />
+    <Compile Include="Effects\PitchShiftVocoderEffect.cs" />
+    <Compile Include="Effects\RobotEffect.cs" />
+    <Compile Include="Effects\TremoloEffect.cs" />
+    <Compile Include="Effects\TubeDistortionEffect.cs" />
+    <Compile Include="Effects\VibratoEffect.cs" />
+    <Compile Include="Effects\WahwahEffect.cs" />
+    <Compile Include="Effects\WhisperEffect.cs" />
+    <Compile Include="FeatureExtractors\AmsExtractor.cs" />
+    <Compile Include="FeatureExtractors\Base\FeatureExtractor.cs" />
+    <Compile Include="FeatureExtractors\Base\FeaturePostProcessing.cs" />
+    <Compile Include="FeatureExtractors\Base\FeatureVectorExtensions.cs" />
+    <Compile Include="FeatureExtractors\FilterbankExtractor.cs" />
+    <Compile Include="FeatureExtractors\LpccExtractor.cs" />
+    <Compile Include="FeatureExtractors\LpcExtractor.cs" />
+    <Compile Include="FeatureExtractors\MfccExtractor.cs" />
+    <Compile Include="FeatureExtractors\Multi\Mpeg7SpectralFeaturesExtractor.cs" />
+    <Compile Include="FeatureExtractors\Multi\SpectralFeaturesExtractor.cs" />
+    <Compile Include="FeatureExtractors\Multi\TimeDomainFeaturesExtractor.cs" />
+    <Compile Include="FeatureExtractors\Options\AmsOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\FeatureExtractorOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\FeatureExtractorOptionsExtensions.cs" />
+    <Compile Include="FeatureExtractors\Options\FilterbankOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\LpccOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\LpcOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\MfccHtkOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\MfccOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\MfccSlaneyOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\MultiFeatureOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\NonLinearityType.cs" />
+    <Compile Include="FeatureExtractors\Options\PitchOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\PlpOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\PnccOptions.cs" />
+    <Compile Include="FeatureExtractors\Options\SpectrumType.cs" />
+    <Compile Include="FeatureExtractors\Options\WaveletOptions.cs" />
+    <Compile Include="FeatureExtractors\PitchExtractor.cs" />
+    <Compile Include="FeatureExtractors\PlpExtractor.cs" />
+    <Compile Include="FeatureExtractors\PnccExtractor.cs" />
+    <Compile Include="FeatureExtractors\Serializers\CsvFeatureSerializer.cs" />
+    <Compile Include="FeatureExtractors\SpnccExtractor.cs" />
+    <Compile Include="FeatureExtractors\WaveletExtractor.cs" />
+    <Compile Include="Features\Harmonic.cs" />
+    <Compile Include="Features\Perceptual.cs" />
+    <Compile Include="Features\Pitch.cs" />
+    <Compile Include="Features\Spectral.cs" />
+    <Compile Include="Filters\Adaptive\AdaptiveFilter.cs" />
+    <Compile Include="Filters\Adaptive\LmfFilter.cs" />
+    <Compile Include="Filters\Adaptive\LmsFilter.cs" />
+    <Compile Include="Filters\Adaptive\NlmfFilter.cs" />
+    <Compile Include="Filters\Adaptive\NlmsFilter.cs" />
+    <Compile Include="Filters\Adaptive\RlsFilter.cs" />
+    <Compile Include="Filters\Adaptive\SignLmsFilter.cs" />
+    <Compile Include="Filters\Adaptive\VariableStepLmsFilter.cs" />
+    <Compile Include="Filters\Base64\FirFilter64.cs" />
+    <Compile Include="Filters\Base64\IFilter64.cs" />
+    <Compile Include="Filters\Base64\IirFilter64.cs" />
+    <Compile Include="Filters\Base64\IOnlineFilter64.cs" />
+    <Compile Include="Filters\Base64\ZiFilter64.cs" />
+    <Compile Include="Filters\Base\FilterChain.cs" />
+    <Compile Include="Filters\Base\FilteringMethod.cs" />
+    <Compile Include="Filters\Base\FirFilter.cs" />
+    <Compile Include="Filters\Base\IFilter.cs" />
+    <Compile Include="Filters\Base\IFilterExtensions.cs" />
+    <Compile Include="Filters\Base\IirFilter.cs" />
+    <Compile Include="Filters\Base\IMixable.cs" />
+    <Compile Include="Filters\Base\IOnlineFilter.cs" />
+    <Compile Include="Filters\Base\LtiFilter.cs" />
+    <Compile Include="Filters\Base\OverlapAddFilter.cs" />
+    <Compile Include="Filters\Base\StateSpace.cs" />
+    <Compile Include="Filters\Base\StereoFilter.cs" />
+    <Compile Include="Filters\Base\TransferFunction.cs" />
+    <Compile Include="Filters\Base\ZiFilter.cs" />
+    <Compile Include="Filters\Bessel\BandPassFilter.cs" />
+    <Compile Include="Filters\Bessel\BandStopFilter.cs" />
+    <Compile Include="Filters\Bessel\Complex.cs" />
+    <Compile Include="Filters\Bessel\HighPassFilter.cs" />
+    <Compile Include="Filters\Bessel\LowPassFilter.cs" />
+    <Compile Include="Filters\Bessel\PrototypeBessel.cs" />
+    <Compile Include="Filters\BiQuad\AllPassFilter.cs" />
+    <Compile Include="Filters\BiQuad\BandPassFilter.cs" />
+    <Compile Include="Filters\BiQuad\BiQuadFilter.cs" />
+    <Compile Include="Filters\BiQuad\HighPassFilter.cs" />
+    <Compile Include="Filters\BiQuad\HighShelfFilter.cs" />
+    <Compile Include="Filters\BiQuad\LowPassFilter.cs" />
+    <Compile Include="Filters\BiQuad\LowShelfFilter.cs" />
+    <Compile Include="Filters\BiQuad\NotchFilter.cs" />
+    <Compile Include="Filters\BiQuad\PeakFilter.cs" />
+    <Compile Include="Filters\Butterworth\BandPassFilter.cs" />
+    <Compile Include="Filters\Butterworth\BandStopFilter.cs" />
+    <Compile Include="Filters\Butterworth\HighPassFilter.cs" />
+    <Compile Include="Filters\Butterworth\LowPassFilter.cs" />
+    <Compile Include="Filters\Butterworth\PrototypeButterworth.cs" />
+    <Compile Include="Filters\ChebyshevII\BandPassFilter.cs" />
+    <Compile Include="Filters\ChebyshevII\BandStopFilter.cs" />
+    <Compile Include="Filters\ChebyshevII\HighPassFilter.cs" />
+    <Compile Include="Filters\ChebyshevII\LowPassFilter.cs" />
+    <Compile Include="Filters\ChebyshevII\PrototypeChebyshevII.cs" />
+    <Compile Include="Filters\ChebyshevI\BandPassFilter.cs" />
+    <Compile Include="Filters\ChebyshevI\BandStopFilter.cs" />
+    <Compile Include="Filters\ChebyshevI\HighPassFilter.cs" />
+    <Compile Include="Filters\ChebyshevI\LowPassFilter.cs" />
+    <Compile Include="Filters\ChebyshevI\PrototypeChebyshevI.cs" />
+    <Compile Include="Filters\CombFeedbackFilter.cs" />
+    <Compile Include="Filters\CombFeedforwardFilter.cs" />
+    <Compile Include="Filters\DcRemovalFilter.cs" />
+    <Compile Include="Filters\DeEmphasisFilter.cs" />
+    <Compile Include="Filters\Elliptic\BandPassFilter.cs" />
+    <Compile Include="Filters\Elliptic\BandStopFilter.cs" />
+    <Compile Include="Filters\Elliptic\HighPassFilter.cs" />
+    <Compile Include="Filters\Elliptic\LowPassFilter.cs" />
+    <Compile Include="Filters\Elliptic\PrototypeElliptic.cs" />
+    <Compile Include="Filters\Fda\DesignFilter.cs" />
+    <Compile Include="Filters\Fda\FilterBanks.cs" />
+    <Compile Include="Filters\Fda\Remez.cs" />
+    <Compile Include="Filters\Fda\VtlnWarper.cs" />
+    <Compile Include="Filters\HilbertFilter.cs" />
+    <Compile Include="Filters\MedianFilter.cs" />
+    <Compile Include="Filters\MovingAverageFilter.cs" />
+    <Compile Include="Filters\MovingAverageRecursiveFilter.cs" />
+    <Compile Include="Filters\OnePole\HighPassFilter.cs" />
+    <Compile Include="Filters\OnePole\LowPassFilter.cs" />
+    <Compile Include="Filters\OnePole\OnePoleFilter.cs" />
+    <Compile Include="Filters\Polyphase\PolyphaseSystem.cs" />
+    <Compile Include="Filters\PreEmphasisFilter.cs" />
+    <Compile Include="Filters\RastaFilter.cs" />
+    <Compile Include="Filters\SavitzkyGolayFilter.cs" />
+    <Compile Include="Filters\ThiranFilter.cs" />
+    <Compile Include="Filters\WienerFilter.cs" />
+    <Compile Include="Operations\Convolution\ComplexConvolver.cs" />
+    <Compile Include="Operations\Convolution\Convolver.cs" />
+    <Compile Include="Operations\Convolution\OlaBlockConvolver.cs" />
+    <Compile Include="Operations\Convolution\OlaBlockConvolver64.cs" />
+    <Compile Include="Operations\Convolution\OlsBlockConvolver.cs" />
+    <Compile Include="Operations\Convolution\OlsBlockConvolver64.cs" />
+    <Compile Include="Operations\EnvelopeFollower.cs" />
+    <Compile Include="Operations\GriffinLimReconstructor.cs" />
+    <Compile Include="Operations\HarmonicPercussiveSeparator.cs" />
+    <Compile Include="Operations\Modulator.cs" />
+    <Compile Include="Operations\Operation.cs" />
+    <Compile Include="Operations\Resampler.cs" />
+    <Compile Include="Operations\SpectralSubtractor.cs" />
+    <Compile Include="Operations\Tsm\PaulStretch.cs" />
+    <Compile Include="Operations\Tsm\PhaseLockingVocoder.cs" />
+    <Compile Include="Operations\Tsm\PhaseVocoder.cs" />
+    <Compile Include="Operations\Tsm\TsmAlgorithm.cs" />
+    <Compile Include="Operations\Tsm\Wsola.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signals\Builders\AdsrBuilder.cs" />
+    <Compile Include="Signals\Builders\AwgnBuilder.cs" />
+    <Compile Include="Signals\Builders\ChirpBuilder.cs" />
+    <Compile Include="Signals\Builders\CosineBuilder.cs" />
+    <Compile Include="Signals\Builders\KarplusStrongBuilder.cs" />
+    <Compile Include="Signals\Builders\KarplusStrongDrumBuilder.cs" />
+    <Compile Include="Signals\Builders\PadSynthBuilder.cs" />
+    <Compile Include="Signals\Builders\PerlinNoiseBuilder.cs" />
+    <Compile Include="Signals\Builders\PinkNoiseBuilder.cs" />
+    <Compile Include="Signals\Builders\PulseWaveBuilder.cs" />
+    <Compile Include="Signals\Builders\RampBuilder.cs" />
+    <Compile Include="Signals\Builders\RedNoiseBuilder.cs" />
+    <Compile Include="Signals\Builders\SawtoothBuilder.cs" />
+    <Compile Include="Signals\Builders\SignalBuilder.cs" />
+    <Compile Include="Signals\Builders\SincBuilder.cs" />
+    <Compile Include="Signals\Builders\SineBuilder.cs" />
+    <Compile Include="Signals\Builders\SquareWaveBuilder.cs" />
+    <Compile Include="Signals\Builders\TriangleWaveBuilder.cs" />
+    <Compile Include="Signals\Builders\WaveTableBuilder.cs" />
+    <Compile Include="Signals\Builders\WhiteNoiseBuilder.cs" />
+    <Compile Include="Signals\ComplexDiscreteSignal.cs" />
+    <Compile Include="Signals\ComplexDiscreteSignalExtensions.cs" />
+    <Compile Include="Signals\DiscreteSignal.cs" />
+    <Compile Include="Signals\DiscreteSignalExtensions.cs" />
+    <Compile Include="Transforms\CepstralTransform.cs" />
+    <Compile Include="Transforms\Dct\Dct1.cs" />
+    <Compile Include="Transforms\Dct\Dct2.cs" />
+    <Compile Include="Transforms\Dct\Dct3.cs" />
+    <Compile Include="Transforms\Dct\Dct4.cs" />
+    <Compile Include="Transforms\Dct\FastDct2.cs" />
+    <Compile Include="Transforms\Dct\FastDct3.cs" />
+    <Compile Include="Transforms\Dct\FastDct4.cs" />
+    <Compile Include="Transforms\Dct\FastMdct.cs" />
+    <Compile Include="Transforms\Dct\IDct.cs" />
+    <Compile Include="Transforms\Dct\Mdct.cs" />
+    <Compile Include="Transforms\Fft.cs" />
+    <Compile Include="Transforms\Fft64.cs" />
+    <Compile Include="Transforms\Goertzel.cs" />
+    <Compile Include="Transforms\HartleyTransform.cs" />
+    <Compile Include="Transforms\HilbertTransform.cs" />
+    <Compile Include="Transforms\MellinTransform.cs" />
+    <Compile Include="Transforms\RealFft.cs" />
+    <Compile Include="Transforms\RealFft64.cs" />
+    <Compile Include="Transforms\Stft.cs" />
+    <Compile Include="Transforms\Wavelets\Fwt.cs" />
+    <Compile Include="Transforms\Wavelets\Wavelet.cs" />
+    <Compile Include="Transforms\Wavelets\WaveletFamily.cs" />
+    <Compile Include="Utils\Guard.cs" />
+    <Compile Include="Utils\Lpc.cs" />
+    <Compile Include="Utils\MathUtils.cs" />
+    <Compile Include="Utils\Matrix.cs" />
+    <Compile Include="Utils\MemoryOperationExtensions.cs" />
+    <Compile Include="Utils\Scale.cs" />
+    <Compile Include="Windows\Window.cs" />
+    <Compile Include="Windows\WindowExtensions.cs" />
+    <Compile Include="Windows\WindowTypes.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
