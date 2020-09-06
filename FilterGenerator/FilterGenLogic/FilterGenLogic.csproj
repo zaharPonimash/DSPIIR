@@ -51,7 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\PublicVersion\Test1\AINetFrame\AI\AI.csproj">
+    <ProjectReference Include="..\..\..\..\..\PublicVersion\Test1\AINetFrame\AI\AI.csproj">
       <Project>{165d777e-8a8e-450b-891a-9046913b6143}</Project>
       <Name>AI</Name>
     </ProjectReference>

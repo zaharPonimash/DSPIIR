@@ -79,6 +79,7 @@
             this.chartVisual3 = new AI.Charts.Control.ChartVisual();
             this.chartVisual2 = new AI.Charts.Control.ChartVisual();
             this.chartVisual1 = new AI.Charts.Control.ChartVisual();
+            this.loadFilt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,7 @@
             this.saveProj,
             this.saveAs,
             this.saveFilt,
+            this.loadFilt,
             this.exitBtn});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -112,41 +114,42 @@
             // creatProject
             // 
             this.creatProject.Name = "creatProject";
-            this.creatProject.Size = new System.Drawing.Size(177, 22);
+            this.creatProject.Size = new System.Drawing.Size(180, 22);
             this.creatProject.Text = "Создать проект";
             this.creatProject.Click += new System.EventHandler(this.CreatProject_Click);
             // 
             // openProject
             // 
             this.openProject.Name = "openProject";
-            this.openProject.Size = new System.Drawing.Size(177, 22);
+            this.openProject.Size = new System.Drawing.Size(180, 22);
             this.openProject.Text = "Открыть проект";
             this.openProject.Click += new System.EventHandler(this.OpenProject_Click);
             // 
             // saveProj
             // 
             this.saveProj.Name = "saveProj";
-            this.saveProj.Size = new System.Drawing.Size(177, 22);
+            this.saveProj.Size = new System.Drawing.Size(180, 22);
             this.saveProj.Text = "Сохранить проект";
             this.saveProj.Click += new System.EventHandler(this.СохранитьПроектToolStripMenuItem_Click);
             // 
             // saveAs
             // 
             this.saveAs.Name = "saveAs";
-            this.saveAs.Size = new System.Drawing.Size(177, 22);
+            this.saveAs.Size = new System.Drawing.Size(180, 22);
             this.saveAs.Text = "Сохранить как";
             this.saveAs.Click += new System.EventHandler(this.SaveAs_Click);
             // 
             // saveFilt
             // 
             this.saveFilt.Name = "saveFilt";
-            this.saveFilt.Size = new System.Drawing.Size(177, 22);
+            this.saveFilt.Size = new System.Drawing.Size(180, 22);
             this.saveFilt.Text = "Сохранить фильтр";
+            this.saveFilt.Click += new System.EventHandler(this.SaveFilt_Click);
             // 
             // exitBtn
             // 
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(177, 22);
+            this.exitBtn.Size = new System.Drawing.Size(180, 22);
             this.exitBtn.Text = "Выход";
             this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
@@ -507,6 +510,13 @@
             this.chartVisual1.Size = new System.Drawing.Size(395, 377);
             this.chartVisual1.TabIndex = 2;
             // 
+            // loadFilt
+            // 
+            this.loadFilt.Name = "loadFilt";
+            this.loadFilt.Size = new System.Drawing.Size(180, 22);
+            this.loadFilt.Text = "Загрузить фильтр";
+            this.loadFilt.Click += new System.EventHandler(this.LoadFilt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,6 +599,7 @@
         private System.Windows.Forms.ToolStripMenuItem bHpass;
         private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem полоснозаграждающийToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem loadFilt;
     }
 }
 

@@ -95,6 +95,29 @@ namespace FilterGenerator
         {
             Close();
         }
+
+        // Сохранить фильтр
+        private void SaveFilt_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                logic.SaveAsBinary(saveFile.FileName, project.Name);
+            }
+        }
+
+
+        // Загрузить фильтр
+        private void LoadFilt_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog saveFile = new OpenFileDialog();
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                logic.LoadAsBinary(saveFile.FileName);
+            }
+        }
         #endregion
 
         #region Фильтры
@@ -365,6 +388,7 @@ namespace FilterGenerator
             iirGenMenu.Enabled = false;
             aboutProj.Enabled = false;
             analyseMenu.Enabled = false;
+            loadFilt.Enabled = false;
         }
 
         // Разблокировка меню при отсутствии проекта
@@ -376,6 +400,7 @@ namespace FilterGenerator
             iirGenMenu.Enabled = true;
             aboutProj.Enabled = true;
             analyseMenu.Enabled = true;
+            loadFilt.Enabled = true;
         }
 
         // Создание фильтра
@@ -398,6 +423,6 @@ namespace FilterGenerator
 
         }
 
-        
+      
     }
 }

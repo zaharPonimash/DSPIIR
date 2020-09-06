@@ -23,6 +23,8 @@ namespace FilterGenLogic
         //Груповая задержка
         public Vector GroupDel { get; set; }
 
+        string filterType;
+        string fCut; 
 
         /// <summary>
         /// Полюса фильтров
@@ -54,6 +56,7 @@ namespace FilterGenLogic
         public void CalcLowFiltBess(double fPass, double fStop)
         {
             //TODO: Доработать
+            filterType = "LowPass Bessel";
             double fCNorm =  (fStop+fPass)/(2.0*_fd);
             CreateF(new NWaves.Filters.Bessel.LowPassFilter(fCNorm, 5));
         }
@@ -68,7 +71,8 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcLowFiltCheb1(double aPass, double aStop, double fPass, double fStop)
         {
-            
+            filterType = "LowPass ChebyshevI";
+            fCut = fPass + "";
             double fCNorm = fPass / _fd;
 
             double eps = 1 - aPass;
@@ -96,6 +100,10 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcLowFiltCheb2(double aPass, double aStop, double fPass, double fStop)
         {
+
+            filterType = "LowPass ChebyshevII";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
 
             double eps =  aStop;
@@ -122,6 +130,10 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcLowFiltB(double aPass, double aStop, double fPass, double fStop)
         {
+
+            filterType = "LowPass Butterworth";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
             double nom = Math.Pow(aPass / aStop, 2);
             nom = Math.Log10(nom > 1e+9 ? 1e+9 : nom);
@@ -157,6 +169,8 @@ namespace FilterGenLogic
 
             //CreateF(new NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
 
+            filterType = "LowPass Elliptic";
+            fCut = fPass + "";
 
             double fCNorm = fPass / _fd;
 
@@ -181,6 +195,9 @@ namespace FilterGenLogic
         /// <param name="fPass"></param>
         public void CalcLowFiltBeQ( double fPass)
         {
+            filterType = "LowPass Bi Quad";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
             CreateF(new NWaves.Filters.BiQuad.LowPassFilter(fCNorm));
         }
@@ -196,6 +213,8 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcHiFiltBess(double fPass, double fStop)
         {
+            filterType = "HighPass Bessel";
+            fCut = fPass + "";
             //TODO: Доработать
             double fCNorm = (fStop+fPass) / (2*_fd);
             CreateF(new NWaves.Filters.Bessel.HighPassFilter(fCNorm, 5));
@@ -211,6 +230,9 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcHiFiltCheb1(double aPass, double aStop, double fPass, double fStop)
         {
+            filterType = "HighPass ChebyshevI";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
 
             double eps = 1 - aStop;
@@ -239,6 +261,9 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcHiFiltCheb2(double aPass, double aStop, double fPass, double fStop)
         {
+            filterType = "HighPass ChebyshevII";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
 
             double eps = 1 - aStop;
@@ -266,6 +291,9 @@ namespace FilterGenLogic
         /// <param name="fStop"></param>
         public void CalcHiFiltB(double aPass, double aStop, double fPass, double fStop)
         {
+            filterType = "HighPass Butterworth";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
             double nom = Math.Pow(aPass / aStop, 2);
             nom = Math.Log10(nom>1e+9?1e+9:nom);
@@ -296,6 +324,9 @@ namespace FilterGenLogic
 
             //CreateF(new NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
 
+            filterType = "HighPass Elliptic";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
 
             double eps = aStop;
@@ -321,6 +352,9 @@ namespace FilterGenLogic
         /// <param name="fPass"></param>
         public void CalcHiFiltBeQ(double fPass)
         {
+            filterType = "HighPass Bi Quad";
+            fCut = fPass + "";
+
             double fCNorm = fPass / _fd;
             CreateF(new NWaves.Filters.BiQuad.HighPassFilter(fCNorm));
         }
@@ -342,6 +376,24 @@ namespace FilterGenLogic
         }
         #endregion
 
+        // Сохранение фильтра
+        public void SaveAsBinary(string path, string projectName)
+        {
+            IIRFilter iIRFilter = new IIRFilter(a, b);
+            iIRFilter.Name = string.Format("filter {0}, freq cut {1}, project {2}", filterType, fCut, projectName);
+            iIRFilter.Save(path);
+        }
+
+
+        // Сохранение фильтра
+        public void LoadAsBinary(string path)
+        {
+            IIRFilter iIRFilter = IIRFilter.Load(path);
+            a = iIRFilter.A;
+            a = a.CutAndZero(a.Count / 2);
+            b = iIRFilter.B;
+            b = b.CutAndZero(b.Count / 2);
+        }
 
         // Фильтр
         public void CreateF(NWaves.Filters.Base64.IirFilter64 filter)
