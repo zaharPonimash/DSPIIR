@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FilterGenLogic;
 using MetroFramework.Controls;
-using MetroFramework.Forms;
-using FilterGenLogic;
+using System;
+using System.Windows.Forms;
 
 namespace FilterGenerator.Controls.Filters
 {
@@ -21,7 +13,7 @@ namespace FilterGenerator.Controls.Filters
             Ok += LowFilter_Ok;
         }
 
-       
+
 
         /// <summary>
         /// Имя фильтра
@@ -34,10 +26,7 @@ namespace FilterGenerator.Controls.Filters
         /// </summary>
         public FilterType FilterType
         {
-            get
-            {
-                return filterType;
-            }
+            get => filterType;
 
             set
             {
@@ -56,11 +45,10 @@ namespace FilterGenerator.Controls.Filters
             }
         }
 
-
-        FilterType filterType;
+        private FilterType filterType;
 
         public double aPass = 0.9, aStop = 0.1, fPass, fStop;
-        
+
 
         private void LowFilter_Load(object sender, EventArgs e)
         {

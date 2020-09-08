@@ -1,13 +1,5 @@
 ﻿using FilterGenLogic;
 using MetroFramework.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FilterGenerator.Controls.Forms
@@ -25,7 +17,7 @@ namespace FilterGenerator.Controls.Forms
 
         private void LowFilter1_Ok(bool obj)
         {
-            
+
             aPass = lowFilter1.aPass;
             aStop = lowFilter1.aStop;
             fPass = lowFilter1.fPass;

@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("FilterGenerator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Триальная версия программы разработанной для синтеза БИХ фильтров. В данной версии доступен синтез ФНЧ и ФВЧ фильтров следующих типов: фильтра Баттерворта, Чебышёва I-го и II-го рода, Элиптического, фильтра Бесселя и биквадратичных фильтров. Фильтры синтезированные ф этой программе можно сохранить и использовать в проектах на базе AI Framework v2.1 и выше")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zahar A. Ponimash")]
 [assembly: AssemblyProduct("IIR Filter Designer")]

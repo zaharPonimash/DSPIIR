@@ -1,14 +1,8 @@
-﻿using MetroFramework.Forms;
+﻿using FilterGenLogic;
+using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FilterGenLogic;
 
 namespace FilterGenerator.Controls.Forms
 {
@@ -20,10 +14,8 @@ namespace FilterGenerator.Controls.Forms
         }
 
         public ProjectSettings settings;
-
-
-        int fdValue = 0; 
-        bool unCorrect = true; // Некорректная частота дискретизации
+        private int fdValue = 0;
+        private bool unCorrect = true; // Некорректная частота дискретизации
 
         // Ok
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -76,8 +68,7 @@ namespace FilterGenerator.Controls.Forms
             }
         }
 
-
-        void fdUnCorrect()
+        private void fdUnCorrect()
         {
             fd.Theme = MetroFramework.MetroThemeStyle.Dark;
             status.ForeColor = Color.Red;

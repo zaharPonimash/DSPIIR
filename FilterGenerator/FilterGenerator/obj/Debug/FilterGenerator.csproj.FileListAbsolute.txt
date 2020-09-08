@@ -52,3 +52,4 @@ C:\Users\Понимаш Захар\Desktop\AIFrameSharp\AIFrameNew\ПО\Созд
 C:\Users\Понимаш Захар\Desktop\AIFrameSharp\AIFrameNew\ПО\Создание фильтров\DSPIIR\FilterGenerator\FilterGenerator\obj\Debug\FilterGenerator.csproj.CopyComplete
 C:\Users\Понимаш Захар\Desktop\AIFrameSharp\AIFrameNew\ПО\Создание фильтров\DSPIIR\FilterGenerator\FilterGenerator\obj\Debug\FilterGenerator.exe
 C:\Users\Понимаш Захар\Desktop\AIFrameSharp\AIFrameNew\ПО\Создание фильтров\DSPIIR\FilterGenerator\FilterGenerator\obj\Debug\FilterGenerator.pdb
+C:\Users\Понимаш Захар\Desktop\AIFrameSharp\AIFrameNew\ПО\Создание фильтров\DSPIIR\FilterGenerator\FilterGenerator\obj\Debug\FilterGenerator.Controls.Forms.AboutProgramm.resources

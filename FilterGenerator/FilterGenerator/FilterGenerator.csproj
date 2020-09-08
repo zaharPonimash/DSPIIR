@@ -65,6 +65,12 @@
     <Compile Include="Controls\Filters\LowFilter.Designer.cs">
       <DependentUpon>LowFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Forms\AboutProgramm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Forms\AboutProgramm.Designer.cs">
+      <DependentUpon>AboutProgramm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Forms\FreqRespForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Controls\Filters\LowFilter.resx">
       <DependentUpon>LowFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Forms\AboutProgramm.resx">
+      <DependentUpon>AboutProgramm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Forms\FreqRespForm.resx">
       <DependentUpon>FreqRespForm.cs</DependentUpon>

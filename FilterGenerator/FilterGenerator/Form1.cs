@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Windows.Forms;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//using System.Windows.Forms;
-using MetroFramework.Forms;
-using FilterGenerator.Controls.Forms;
-using AI;
-using FilterGenLogic;
-using MetroFramework;
+﻿using AI;
 using AI.Charts.Forms;
 using AI.DSP.Analyse;
+using FilterGenerator.Controls.Forms;
+using FilterGenLogic;
+using MetroFramework;
+//using System.Windows.Forms;
+using MetroFramework.Forms;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace FilterGenerator
 {
@@ -25,10 +19,10 @@ namespace FilterGenerator
             InitializeComponent();
         }
 
-        ProjectSettings project;
-        MainLogic logic;
-        SaveFileDialog saveFileDialog = new SaveFileDialog();
-        OpenFileDialog openFileDialog = new OpenFileDialog();
+        private ProjectSettings project;
+        private MainLogic logic;
+        private readonly SaveFileDialog saveFileDialog = new SaveFileDialog();
+        private readonly OpenFileDialog openFileDialog = new OpenFileDialog();
 
 
 
@@ -288,7 +282,7 @@ namespace FilterGenerator
         // Тестирование АЧХ фильтра
         private void FreqResp_Click(object sender, EventArgs e)
         {
-            var frequency = new FrequencyResponse(project.Fd);
+            FrequencyResponse frequency = new FrequencyResponse(project.Fd);
 
             FreqRespForm freqRespForm = new FreqRespForm();
 
@@ -299,11 +293,13 @@ namespace FilterGenerator
                 frequency.Step = double.Parse(freqRespForm.fStep.Text.Replace('.', ','));
                 frequency.Time = double.Parse(freqRespForm.Time.Text.Replace('.', ','));
 
-                FormChart form = new FormChart();
-                form.ChartName = "АЧХ";
-                form.LabelX = "Частота Гц";
-                form.LabelY = "Коэффициент передачи";
-                var dat = logic.FreqRespFilt(frequency);
+                FormChart form = new FormChart
+                {
+                    ChartName = "АЧХ",
+                    LabelX = "Частота Гц",
+                    LabelY = "Коэффициент передачи"
+                };
+                Tuple<Vector, Vector> dat = logic.FreqRespFilt(frequency);
                 form.PlotBlack(dat.Item1, dat.Item2, "АЧХ");
                 form.ShowDialog();
             }
@@ -362,7 +358,7 @@ namespace FilterGenerator
 
 
         // Загрузка / создание проекта
-        void LoadProject()
+        private void LoadProject()
         {
 
             double step = project.Fd / 200.0;
@@ -380,7 +376,7 @@ namespace FilterGenerator
         }
 
         // Блокировка меню при отсутствии проекта
-        void MenuLock()
+        private void MenuLock()
         {
             saveAs.Enabled = false;
             saveProj.Enabled = false;
@@ -392,7 +388,7 @@ namespace FilterGenerator
         }
 
         // Разблокировка меню при отсутствии проекта
-        void MenuUnLock()
+        private void MenuUnLock()
         {
             saveAs.Enabled = true;
             saveProj.Enabled = true;
@@ -404,9 +400,9 @@ namespace FilterGenerator
         }
 
         // Создание фильтра
-        void GenF()
+        private void GenF()
         {
-            var f = Vector.Seq0(project.Fd / 512.0, project.Fd + 256);
+            Vector f = Vector.Seq0(project.Fd / 512.0, project.Fd + 256);
 
             chartVisual2.Clear();
             chartVisual2.AddPlot(f, logic.FreqResp, "", Color.Blue, 1);
@@ -423,6 +419,14 @@ namespace FilterGenerator
 
         }
 
-      
+
+
+        #region Aboute
+        private void ОПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutProgramm aboutProgramm = new AboutProgramm();
+            aboutProgramm.ShowDialog();
+        }
+        #endregion
     }
 }
