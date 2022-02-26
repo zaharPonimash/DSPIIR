@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FilterGenLogic</RootNamespace>
     <AssemblyName>FilterGenLogic</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AI">
+      <HintPath>..\Binary\Release\net472\AI.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -49,16 +52,6 @@
     <Compile Include="MainLogic.cs" />
     <Compile Include="ProjectSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\PublicVersion\Test1\AINetFrame\AI\AI.csproj">
-      <Project>{165d777e-8a8e-450b-891a-9046913b6143}</Project>
-      <Name>AI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NWaveNetFrame\NWaveNetFrame.csproj">
-      <Project>{f7997c04-e3f7-4a11-8b86-c04b1ce95eb8}</Project>
-      <Name>NWaveNetFrame</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

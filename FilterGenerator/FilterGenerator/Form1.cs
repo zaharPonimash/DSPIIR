@@ -1,5 +1,6 @@
-﻿using AI;
-using AI.Charts.Forms;
+﻿using AI.Charts.Forms;
+using AI.DataStructs.Algebraic;
+using AI.DataStructs.WithComplexElements;
 using AI.DSP.Analyse;
 using FilterGenerator.Controls.Forms;
 using FilterGenLogic;
@@ -330,7 +331,7 @@ namespace FilterGenerator
             chartVisual2.ChartName = "АЧХ";
             chartVisual2.LabelX = "Частота [Гц]";
             chartVisual2.LabelY = "Коэф. передачи";
-            Vector f = Vector.Seq0(0.0001, 0.0004);
+            Vector f = Vector.SeqBeginsWithZero(0.0001, 0.0004);
             Vector A = new Vector(f.Count) + 1;
             chartVisual2.AddPlot(f, A, "", Color.Blue);
 
@@ -362,7 +363,7 @@ namespace FilterGenerator
         {
 
             double step = project.Fd / 200.0;
-            Vector f = Vector.Seq0(step, project.Fd / 2.0);
+            Vector f = Vector.SeqBeginsWithZero(step, project.Fd / 2.0);
             Vector A = new Vector(f.Count) + 1;
             chartVisual2.Clear();
             chartVisual2.AddPlot(f, A, "", Color.Blue);
@@ -402,7 +403,7 @@ namespace FilterGenerator
         // Создание фильтра
         private void GenF()
         {
-            Vector f = Vector.Seq0(project.Fd / 512.0, project.Fd + 256);
+            Vector f = Vector.SeqBeginsWithZero(project.Fd / 512.0, project.Fd / 2);
 
             chartVisual2.Clear();
             chartVisual2.AddPlot(f, logic.FreqResp, "", Color.Blue, 1);

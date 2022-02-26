@@ -1,13 +1,8 @@
-﻿using AI;
+﻿using AI.DataStructs.Algebraic;
+using AI.DataStructs.WithComplexElements;
 using AI.DSP.Analyse;
-using AI.DSP;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AI.DSP.IIR;
-using AI.SpecialFunction;
+using System;
 
 namespace FilterGenLogic
 {
@@ -23,15 +18,15 @@ namespace FilterGenLogic
         //Груповая задержка
         public Vector GroupDel { get; set; }
 
-        string filterType;
-        string fCut; 
+        private string filterType;
+        private string fCut;
 
         /// <summary>
         /// Полюса фильтров
         /// </summary>
         public ComplexVector Pol { get; set; }
 
-        int _fd;
+        private readonly int _fd;
 
 
         /// <summary>
@@ -57,8 +52,8 @@ namespace FilterGenLogic
         {
             //TODO: Доработать
             filterType = "LowPass Bessel";
-            double fCNorm =  (fStop+fPass)/(2.0*_fd);
-            CreateF(new NWaves.Filters.Bessel.LowPassFilter(fCNorm, 5));
+            double fCNorm = (fStop + fPass) / (2.0 * _fd);
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.Bessel.LowPassFilter(fCNorm, 5));
         }
 
 
@@ -79,14 +74,14 @@ namespace FilterGenLogic
             double g = Math.Sqrt((Math.Pow(aPass / aStop, 2) - 1) / (eps * eps));
             double omega = fStop / fPass;
 
-            double nom = g+ Math.Sqrt(g*g-1);
+            double nom = g + Math.Sqrt(g * g - 1);
             nom = Math.Log(nom > 1e+9 ? 1e+9 : nom);
 
             double denom = Math.Log(omega + Math.Sqrt(omega * omega - 1)); ;
 
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.ChebyshevI.LowPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.ChebyshevI.LowPassFilter(fCNorm, order));
         }
 
 
@@ -106,7 +101,7 @@ namespace FilterGenLogic
 
             double fCNorm = fPass / _fd;
 
-            double eps =  aStop;
+            double eps = aStop;
             double g = Math.Sqrt((Math.Pow(aPass / aStop, 2) - 1) / (eps * eps));
             double omega = fStop / fPass;
 
@@ -117,7 +112,7 @@ namespace FilterGenLogic
 
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.ChebyshevII.LowPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.ChebyshevII.LowPassFilter(fCNorm, order));
         }
 
 
@@ -137,11 +132,11 @@ namespace FilterGenLogic
             double fCNorm = fPass / _fd;
             double nom = Math.Pow(aPass / aStop, 2);
             nom = Math.Log10(nom > 1e+9 ? 1e+9 : nom);
-            double denom = 2.0 * Math.Log10(fStop/fPass);
+            double denom = 2.0 * Math.Log10(fStop / fPass);
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.Butterworth.LowPassFilter(fCNorm, order));
-            
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.Butterworth.LowPassFilter(fCNorm, order));
+
         }
 
 
@@ -167,7 +162,7 @@ namespace FilterGenLogic
 
             //int order = (int)(nom / denom + 0.9999);
 
-            //CreateF(new NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
+            //CreateF(new AI.BackEnds.DSP.NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
 
             filterType = "LowPass Elliptic";
             fCut = fPass + "";
@@ -184,7 +179,7 @@ namespace FilterGenLogic
             double denom = Math.Log(omega + Math.Sqrt(omega * omega - 1)); ;
 
             int order = (int)(nom / denom + 0.9999);
-            CreateF(new NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
         }
 
 
@@ -193,13 +188,13 @@ namespace FilterGenLogic
         /// Расчет ФНЧ Биквадр
         /// </summary>
         /// <param name="fPass"></param>
-        public void CalcLowFiltBeQ( double fPass)
+        public void CalcLowFiltBeQ(double fPass)
         {
             filterType = "LowPass Bi Quad";
             fCut = fPass + "";
 
             double fCNorm = fPass / _fd;
-            CreateF(new NWaves.Filters.BiQuad.LowPassFilter(fCNorm));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.BiQuad.LowPassFilter(fCNorm));
         }
 
         #endregion
@@ -216,8 +211,8 @@ namespace FilterGenLogic
             filterType = "HighPass Bessel";
             fCut = fPass + "";
             //TODO: Доработать
-            double fCNorm = (fStop+fPass) / (2*_fd);
-            CreateF(new NWaves.Filters.Bessel.HighPassFilter(fCNorm, 5));
+            double fCNorm = (fStop + fPass) / (2 * _fd);
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.Bessel.HighPassFilter(fCNorm, 5));
         }
 
 
@@ -247,7 +242,7 @@ namespace FilterGenLogic
 
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.ChebyshevI.HighPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.ChebyshevI.HighPassFilter(fCNorm, order));
         }
 
 
@@ -278,7 +273,7 @@ namespace FilterGenLogic
 
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.ChebyshevII.HighPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.ChebyshevII.HighPassFilter(fCNorm, order));
         }
 
 
@@ -296,11 +291,11 @@ namespace FilterGenLogic
 
             double fCNorm = fPass / _fd;
             double nom = Math.Pow(aPass / aStop, 2);
-            nom = Math.Log10(nom>1e+9?1e+9:nom);
-            double denom = 2.0 * Math.Log10(fPass/ fStop);
+            nom = Math.Log10(nom > 1e+9 ? 1e+9 : nom);
+            double denom = 2.0 * Math.Log10(fPass / fStop);
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.Butterworth.HighPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.Butterworth.HighPassFilter(fCNorm, order));
         }
 
 
@@ -322,7 +317,7 @@ namespace FilterGenLogic
 
             //int order = (int)(nom / denom + 0.9999);
 
-            //CreateF(new NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
+            //CreateF(new AI.BackEnds.DSP.NWaves.Filters.Elliptic.LowPassFilter(fCNorm, order));
 
             filterType = "HighPass Elliptic";
             fCut = fPass + "";
@@ -341,7 +336,7 @@ namespace FilterGenLogic
 
             int order = (int)(nom / denom + 0.9999);
 
-            CreateF(new NWaves.Filters.Elliptic.HighPassFilter(fCNorm, order));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.Elliptic.HighPassFilter(fCNorm, order));
         }
 
 
@@ -356,11 +351,11 @@ namespace FilterGenLogic
             fCut = fPass + "";
 
             double fCNorm = fPass / _fd;
-            CreateF(new NWaves.Filters.BiQuad.HighPassFilter(fCNorm));
+            CreateF(new AI.BackEnds.DSP.NWaves.Filters.BiQuad.HighPassFilter(fCNorm));
         }
 
         #endregion
-        
+
 
         #region Тесты
         /// <summary>
@@ -379,8 +374,10 @@ namespace FilterGenLogic
         // Сохранение фильтра
         public void SaveAsBinary(string path, string projectName)
         {
-            IIRFilter iIRFilter = new IIRFilter(a, b);
-            iIRFilter.Name = string.Format("filter {0}, freq cut {1}, project {2}", filterType, fCut, projectName);
+            IIRFilter iIRFilter = new IIRFilter(a, b)
+            {
+                Name = string.Format("filter {0}, freq cut {1}, project {2}", filterType, fCut, projectName)
+            };
             iIRFilter.Save(path);
         }
 
@@ -396,7 +393,7 @@ namespace FilterGenLogic
         }
 
         // Фильтр
-        public void CreateF(NWaves.Filters.Base64.IirFilter64 filter)
+        public void CreateF(AI.BackEnds.DSP.NWaves.Filters.Base64.IirFilter64 filter)
         {
             Vector a1 = new Vector(filter._a);
             Vector b1 = new Vector(filter._b);

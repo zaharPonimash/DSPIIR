@@ -138,7 +138,6 @@
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = resources.GetString("textBoxDescription.Text");
-            this.textBoxDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // okButton
             // 

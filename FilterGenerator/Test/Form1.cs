@@ -1,16 +1,7 @@
-﻿using NWaves.Filters.Bessel;
-using AI;
-using AI.DSPCore;
+﻿using AI.BackEnds.DSP.NWaves.Filters.Bessel;
+using AI.DataStructs.Algebraic;
 using AI.DSP.Analyse;
 using AI.DSP.IIR;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Test
@@ -24,7 +15,7 @@ namespace Test
             double f0 = f / fd;
             double f1 = fe / fd;
 
-            var lowPassFilter = new LowPassFilter(f1,10);
+            LowPassFilter lowPassFilter = new LowPassFilter(f1, 10);
             lowPassFilter.Normalize();
 
             Vector a = new Vector(lowPassFilter._a);
@@ -35,26 +26,26 @@ namespace Test
 
 
 
-            FrequencyResponse frequencyResponse = new FrequencyResponse((int)fd);
+            FrequencyResponse frequencyResponse = new FrequencyResponse((int)fd)
+            {
+                FStart = 0,
+                FEnd = 300,
+                Step = 1.5,
+                Time = 0.8
+            };
 
-            frequencyResponse.FStart = 0;
-            frequencyResponse.FEnd = 400;
-            frequencyResponse.Step = 0.5;
-            frequencyResponse.Time = 2;
-
-            var fSig = frequencyResponse.Test(vec2vec);
+            Vector fSig = frequencyResponse.Test(vec2vec);
 
             chartVisual1.PlotBlack(frequencyResponse.Freq, fSig);
 
         }
 
+        private readonly double fd = 600;
+        private readonly double f = 45;
+        private readonly double fe = 55;
+        private readonly IIRFilter iIRFilter;
 
-        double fd = 800;
-        double f = 45;
-        double fe = 55;
-        IIRFilter iIRFilter;
-
-        Vector vec2vec(Vector sig)
+        private Vector vec2vec(Vector sig)
         {
             Vector fSig = iIRFilter.FilterOutp(sig);
             return fSig;

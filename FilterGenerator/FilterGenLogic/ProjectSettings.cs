@@ -1,7 +1,7 @@
-﻿using System.IO;
+﻿using Newtonsoft.Json;
 using System;
-using Newtonsoft.Json;
 using System.Globalization;
+using System.IO;
 
 namespace FilterGenLogic
 {
@@ -73,7 +73,7 @@ namespace FilterGenLogic
         public static ProjectSettings Open(string path)
         {
             string json = File.ReadAllText(path);
-            var dat = JsonConvert.DeserializeObject<ProjectSettings>(json);
+            ProjectSettings dat = JsonConvert.DeserializeObject<ProjectSettings>(json);
             dat._path = path;
             return dat;
         }
@@ -83,11 +83,13 @@ namespace FilterGenLogic
         /// </summary>
         public static double ToDouble(string data)
         {
-            NumberFormatInfo provider = new NumberFormatInfo();
-            provider.NumberDecimalSeparator = ",";
-            provider.NumberGroupSeparator = ".";
-            provider.NumberGroupSizes = new int[] { 3 };
-            var str = data.Replace(".", ",");
+            NumberFormatInfo provider = new NumberFormatInfo
+            {
+                NumberDecimalSeparator = ",",
+                NumberGroupSeparator = ".",
+                NumberGroupSizes = new int[] { 3 }
+            };
+            string str = data.Replace(".", ",");
             return Convert.ToDouble(str, provider);
         }
     }
