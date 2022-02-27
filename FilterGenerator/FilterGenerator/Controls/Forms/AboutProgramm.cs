@@ -8,9 +8,9 @@ namespace FilterGenerator.Controls.Forms
         public AboutProgramm()
         {
             InitializeComponent();
-            Text = string.Format("О программе {0}", AssemblyTitle);
+            Text = "О программе IIR Filter Designer";
             labelProductName.Text = AssemblyProduct;
-            labelVersion.Text = string.Format("Версия {0}", AssemblyVersion);
+            labelVersion.Text = $"Версия: {AssemblyVersion}";
             labelCopyright.Text = AssemblyCopyright;
             labelCompanyName.Text = AssemblyCompany;
             textBoxDescription.Text = AssemblyDescription;

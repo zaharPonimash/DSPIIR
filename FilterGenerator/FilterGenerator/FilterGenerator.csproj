@@ -7,7 +7,7 @@
     <ProjectGuid>{29F19A44-074F-45DC-8877-D9AB0A23B481}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FilterGenerator</RootNamespace>
-    <AssemblyName>FilterGenerator</AssemblyName>
+    <AssemblyName>IIR Filter Designer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

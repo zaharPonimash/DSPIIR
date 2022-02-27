@@ -26,7 +26,6 @@ namespace FilterGenerator
         private readonly OpenFileDialog openFileDialog = new OpenFileDialog();
 
 
-
         #region Файл
         // Создание проекта
         private void CreatProject_Click(object sender, EventArgs e)

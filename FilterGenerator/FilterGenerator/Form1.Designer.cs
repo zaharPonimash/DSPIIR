@@ -46,32 +46,32 @@
             this.butterFilt = new System.Windows.Forms.ToolStripMenuItem();
             this.BLowFilt = new System.Windows.Forms.ToolStripMenuItem();
             this.bHpass = new System.Windows.Forms.ToolStripMenuItem();
-            this.пФToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.полоснозаграждающийToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ButterBandPass = new System.Windows.Forms.ToolStripMenuItem();
+            this.ButterBandStop = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрБесселяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lowPasGen = new System.Windows.Forms.ToolStripMenuItem();
             this.bessHPass = new System.Windows.Forms.ToolStripMenuItem();
-            this.пФToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BessBandPass = new System.Windows.Forms.ToolStripMenuItem();
             this.полосноЗаграждающийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрЧебышёваIгоРодаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cheb1Low = new System.Windows.Forms.ToolStripMenuItem();
             this.cheb1Hpass = new System.Windows.Forms.ToolStripMenuItem();
-            this.пФToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cheb1BandPass = new System.Windows.Forms.ToolStripMenuItem();
             this.полоснозаграждающийToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрЧебышёваIIгоРодаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Cheb2Low = new System.Windows.Forms.ToolStripMenuItem();
             this.cheb2H = new System.Windows.Forms.ToolStripMenuItem();
-            this.пФToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cheb2BandPass = new System.Windows.Forms.ToolStripMenuItem();
             this.полоснозаграждающийToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.эллиптическийФильтрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lowEllip = new System.Windows.Forms.ToolStripMenuItem();
             this.hPassEliptic = new System.Windows.Forms.ToolStripMenuItem();
-            this.пФToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ElepticBandPass = new System.Windows.Forms.ToolStripMenuItem();
             this.полоснозаграждающийToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.биквадратичныйФильтрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фНЧToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.biQHPass = new System.Windows.Forms.ToolStripMenuItem();
-            this.пФToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BiQBandPass = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutProj = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,49 +114,49 @@
             // creatProject
             // 
             this.creatProject.Name = "creatProject";
-            this.creatProject.Size = new System.Drawing.Size(177, 22);
+            this.creatProject.Size = new System.Drawing.Size(180, 22);
             this.creatProject.Text = "Создать проект";
             this.creatProject.Click += new System.EventHandler(this.CreatProject_Click);
             // 
             // openProject
             // 
             this.openProject.Name = "openProject";
-            this.openProject.Size = new System.Drawing.Size(177, 22);
+            this.openProject.Size = new System.Drawing.Size(180, 22);
             this.openProject.Text = "Открыть проект";
             this.openProject.Click += new System.EventHandler(this.OpenProject_Click);
             // 
             // saveProj
             // 
             this.saveProj.Name = "saveProj";
-            this.saveProj.Size = new System.Drawing.Size(177, 22);
+            this.saveProj.Size = new System.Drawing.Size(180, 22);
             this.saveProj.Text = "Сохранить проект";
             this.saveProj.Click += new System.EventHandler(this.СохранитьПроектToolStripMenuItem_Click);
             // 
             // saveAs
             // 
             this.saveAs.Name = "saveAs";
-            this.saveAs.Size = new System.Drawing.Size(177, 22);
+            this.saveAs.Size = new System.Drawing.Size(180, 22);
             this.saveAs.Text = "Сохранить как";
             this.saveAs.Click += new System.EventHandler(this.SaveAs_Click);
             // 
             // saveFilt
             // 
             this.saveFilt.Name = "saveFilt";
-            this.saveFilt.Size = new System.Drawing.Size(177, 22);
+            this.saveFilt.Size = new System.Drawing.Size(180, 22);
             this.saveFilt.Text = "Сохранить фильтр";
             this.saveFilt.Click += new System.EventHandler(this.SaveFilt_Click);
             // 
             // loadFilt
             // 
             this.loadFilt.Name = "loadFilt";
-            this.loadFilt.Size = new System.Drawing.Size(177, 22);
+            this.loadFilt.Size = new System.Drawing.Size(180, 22);
             this.loadFilt.Text = "Загрузить фильтр";
             this.loadFilt.Click += new System.EventHandler(this.LoadFilt_Click);
             // 
             // exitBtn
             // 
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(177, 22);
+            this.exitBtn.Size = new System.Drawing.Size(180, 22);
             this.exitBtn.Text = "Выход";
             this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
@@ -173,20 +173,22 @@
             // freqResp
             // 
             this.freqResp.Name = "freqResp";
-            this.freqResp.Size = new System.Drawing.Size(101, 22);
+            this.freqResp.Size = new System.Drawing.Size(180, 22);
             this.freqResp.Text = "АЧХ";
             this.freqResp.Click += new System.EventHandler(this.FreqResp_Click);
             // 
             // лЧМToolStripMenuItem
             // 
+            this.лЧМToolStripMenuItem.Enabled = false;
             this.лЧМToolStripMenuItem.Name = "лЧМToolStripMenuItem";
-            this.лЧМToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.лЧМToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.лЧМToolStripMenuItem.Text = "ЛЧМ";
             // 
             // аМКToolStripMenuItem
             // 
+            this.аМКToolStripMenuItem.Enabled = false;
             this.аМКToolStripMenuItem.Name = "аМКToolStripMenuItem";
-            this.аМКToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.аМКToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.аМКToolStripMenuItem.Text = "АМК";
             // 
             // iirGenMenu
@@ -208,8 +210,8 @@
             this.butterFilt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BLowFilt,
             this.bHpass,
-            this.пФToolStripMenuItem5,
-            this.полоснозаграждающийToolStripMenuItem4});
+            this.ButterBandPass,
+            this.ButterBandStop});
             this.butterFilt.Name = "butterFilt";
             this.butterFilt.Size = new System.Drawing.Size(232, 22);
             this.butterFilt.Text = "Фильтр Баттерворта";
@@ -229,24 +231,26 @@
             this.bHpass.Text = "ФВЧ";
             this.bHpass.Click += new System.EventHandler(this.BHpass_Click);
             // 
-            // пФToolStripMenuItem5
+            // ButterBandPass
             // 
-            this.пФToolStripMenuItem5.Name = "пФToolStripMenuItem5";
-            this.пФToolStripMenuItem5.Size = new System.Drawing.Size(214, 22);
-            this.пФToolStripMenuItem5.Text = "ПФ";
+            this.ButterBandPass.Enabled = false;
+            this.ButterBandPass.Name = "ButterBandPass";
+            this.ButterBandPass.Size = new System.Drawing.Size(214, 22);
+            this.ButterBandPass.Text = "ПФ";
             // 
-            // полоснозаграждающийToolStripMenuItem4
+            // ButterBandStop
             // 
-            this.полоснозаграждающийToolStripMenuItem4.Name = "полоснозаграждающийToolStripMenuItem4";
-            this.полоснозаграждающийToolStripMenuItem4.Size = new System.Drawing.Size(214, 22);
-            this.полоснозаграждающийToolStripMenuItem4.Text = "Полосно-заграждающий";
+            this.ButterBandStop.Enabled = false;
+            this.ButterBandStop.Name = "ButterBandStop";
+            this.ButterBandStop.Size = new System.Drawing.Size(214, 22);
+            this.ButterBandStop.Text = "Полосно-заграждающий";
             // 
             // фильтрБесселяToolStripMenuItem
             // 
             this.фильтрБесселяToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lowPasGen,
             this.bessHPass,
-            this.пФToolStripMenuItem,
+            this.BessBandPass,
             this.полосноЗаграждающийToolStripMenuItem});
             this.фильтрБесселяToolStripMenuItem.Name = "фильтрБесселяToolStripMenuItem";
             this.фильтрБесселяToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
@@ -266,14 +270,16 @@
             this.bessHPass.Text = "ФВЧ";
             this.bessHPass.Click += new System.EventHandler(this.BessHPass_Click);
             // 
-            // пФToolStripMenuItem
+            // BessBandPass
             // 
-            this.пФToolStripMenuItem.Name = "пФToolStripMenuItem";
-            this.пФToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.пФToolStripMenuItem.Text = "ПФ";
+            this.BessBandPass.Enabled = false;
+            this.BessBandPass.Name = "BessBandPass";
+            this.BessBandPass.Size = new System.Drawing.Size(214, 22);
+            this.BessBandPass.Text = "ПФ";
             // 
             // полосноЗаграждающийToolStripMenuItem
             // 
+            this.полосноЗаграждающийToolStripMenuItem.Enabled = false;
             this.полосноЗаграждающийToolStripMenuItem.Name = "полосноЗаграждающийToolStripMenuItem";
             this.полосноЗаграждающийToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.полосноЗаграждающийToolStripMenuItem.Text = "Полосно-заграждающий";
@@ -283,7 +289,7 @@
             this.фильтрЧебышёваIгоРодаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cheb1Low,
             this.cheb1Hpass,
-            this.пФToolStripMenuItem1,
+            this.Cheb1BandPass,
             this.полоснозаграждающийToolStripMenuItem1});
             this.фильтрЧебышёваIгоРодаToolStripMenuItem.Name = "фильтрЧебышёваIгоРодаToolStripMenuItem";
             this.фильтрЧебышёваIгоРодаToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
@@ -303,14 +309,16 @@
             this.cheb1Hpass.Text = "ФВЧ";
             this.cheb1Hpass.Click += new System.EventHandler(this.Cheb1Hpass_Click);
             // 
-            // пФToolStripMenuItem1
+            // Cheb1BandPass
             // 
-            this.пФToolStripMenuItem1.Name = "пФToolStripMenuItem1";
-            this.пФToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
-            this.пФToolStripMenuItem1.Text = "ПФ";
+            this.Cheb1BandPass.Enabled = false;
+            this.Cheb1BandPass.Name = "Cheb1BandPass";
+            this.Cheb1BandPass.Size = new System.Drawing.Size(214, 22);
+            this.Cheb1BandPass.Text = "ПФ";
             // 
             // полоснозаграждающийToolStripMenuItem1
             // 
+            this.полоснозаграждающийToolStripMenuItem1.Enabled = false;
             this.полоснозаграждающийToolStripMenuItem1.Name = "полоснозаграждающийToolStripMenuItem1";
             this.полоснозаграждающийToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
             this.полоснозаграждающийToolStripMenuItem1.Text = "Полосно-заграждающий";
@@ -320,7 +328,7 @@
             this.фильтрЧебышёваIIгоРодаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Cheb2Low,
             this.cheb2H,
-            this.пФToolStripMenuItem2,
+            this.Cheb2BandPass,
             this.полоснозаграждающийToolStripMenuItem2});
             this.фильтрЧебышёваIIгоРодаToolStripMenuItem.Name = "фильтрЧебышёваIIгоРодаToolStripMenuItem";
             this.фильтрЧебышёваIIгоРодаToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
@@ -340,14 +348,16 @@
             this.cheb2H.Text = "ФВЧ";
             this.cheb2H.Click += new System.EventHandler(this.Cheb2H_Click);
             // 
-            // пФToolStripMenuItem2
+            // Cheb2BandPass
             // 
-            this.пФToolStripMenuItem2.Name = "пФToolStripMenuItem2";
-            this.пФToolStripMenuItem2.Size = new System.Drawing.Size(214, 22);
-            this.пФToolStripMenuItem2.Text = "ПФ";
+            this.Cheb2BandPass.Enabled = false;
+            this.Cheb2BandPass.Name = "Cheb2BandPass";
+            this.Cheb2BandPass.Size = new System.Drawing.Size(214, 22);
+            this.Cheb2BandPass.Text = "ПФ";
             // 
             // полоснозаграждающийToolStripMenuItem2
             // 
+            this.полоснозаграждающийToolStripMenuItem2.Enabled = false;
             this.полоснозаграждающийToolStripMenuItem2.Name = "полоснозаграждающийToolStripMenuItem2";
             this.полоснозаграждающийToolStripMenuItem2.Size = new System.Drawing.Size(214, 22);
             this.полоснозаграждающийToolStripMenuItem2.Text = "Полосно-заграждающий";
@@ -357,7 +367,7 @@
             this.эллиптическийФильтрToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lowEllip,
             this.hPassEliptic,
-            this.пФToolStripMenuItem3,
+            this.ElepticBandPass,
             this.полоснозаграждающийToolStripMenuItem3});
             this.эллиптическийФильтрToolStripMenuItem.Name = "эллиптическийФильтрToolStripMenuItem";
             this.эллиптическийФильтрToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
@@ -377,14 +387,16 @@
             this.hPassEliptic.Text = "ФВЧ";
             this.hPassEliptic.Click += new System.EventHandler(this.HPassEliptic_Click);
             // 
-            // пФToolStripMenuItem3
+            // ElepticBandPass
             // 
-            this.пФToolStripMenuItem3.Name = "пФToolStripMenuItem3";
-            this.пФToolStripMenuItem3.Size = new System.Drawing.Size(214, 22);
-            this.пФToolStripMenuItem3.Text = "ПФ";
+            this.ElepticBandPass.Enabled = false;
+            this.ElepticBandPass.Name = "ElepticBandPass";
+            this.ElepticBandPass.Size = new System.Drawing.Size(214, 22);
+            this.ElepticBandPass.Text = "ПФ";
             // 
             // полоснозаграждающийToolStripMenuItem3
             // 
+            this.полоснозаграждающийToolStripMenuItem3.Enabled = false;
             this.полоснозаграждающийToolStripMenuItem3.Name = "полоснозаграждающийToolStripMenuItem3";
             this.полоснозаграждающийToolStripMenuItem3.Size = new System.Drawing.Size(214, 22);
             this.полоснозаграждающийToolStripMenuItem3.Text = "Полосно-заграждающий";
@@ -394,7 +406,7 @@
             this.биквадратичныйФильтрToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.фНЧToolStripMenuItem4,
             this.biQHPass,
-            this.пФToolStripMenuItem4});
+            this.BiQBandPass});
             this.биквадратичныйФильтрToolStripMenuItem.Name = "биквадратичныйФильтрToolStripMenuItem";
             this.биквадратичныйФильтрToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.биквадратичныйФильтрToolStripMenuItem.Text = "Биквадратный фильтр";
@@ -402,22 +414,23 @@
             // фНЧToolStripMenuItem4
             // 
             this.фНЧToolStripMenuItem4.Name = "фНЧToolStripMenuItem4";
-            this.фНЧToolStripMenuItem4.Size = new System.Drawing.Size(100, 22);
+            this.фНЧToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.фНЧToolStripMenuItem4.Text = "ФНЧ";
             this.фНЧToolStripMenuItem4.Click += new System.EventHandler(this.ФНЧToolStripMenuItem4_Click);
             // 
             // biQHPass
             // 
             this.biQHPass.Name = "biQHPass";
-            this.biQHPass.Size = new System.Drawing.Size(100, 22);
+            this.biQHPass.Size = new System.Drawing.Size(180, 22);
             this.biQHPass.Text = "ФВЧ";
             this.biQHPass.Click += new System.EventHandler(this.BiQHPass_Click);
             // 
-            // пФToolStripMenuItem4
+            // BiQBandPass
             // 
-            this.пФToolStripMenuItem4.Name = "пФToolStripMenuItem4";
-            this.пФToolStripMenuItem4.Size = new System.Drawing.Size(100, 22);
-            this.пФToolStripMenuItem4.Text = "ПФ";
+            this.BiQBandPass.Enabled = false;
+            this.BiQBandPass.Name = "BiQBandPass";
+            this.BiQBandPass.Size = new System.Drawing.Size(180, 22);
+            this.BiQBandPass.Text = "ПФ";
             // 
             // справкаToolStripMenuItem
             // 
@@ -437,6 +450,7 @@
             // 
             // aboutProj
             // 
+            this.aboutProj.Enabled = false;
             this.aboutProj.Name = "aboutProj";
             this.aboutProj.Size = new System.Drawing.Size(180, 22);
             this.aboutProj.Text = "О проекте";
@@ -565,27 +579,27 @@
         private System.Windows.Forms.ToolStripMenuItem фильтрБесселяToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lowPasGen;
         private System.Windows.Forms.ToolStripMenuItem bessHPass;
-        private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BessBandPass;
         private System.Windows.Forms.ToolStripMenuItem полосноЗаграждающийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фильтрЧебышёваIгоРодаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cheb1Low;
         private System.Windows.Forms.ToolStripMenuItem cheb1Hpass;
-        private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem Cheb1BandPass;
         private System.Windows.Forms.ToolStripMenuItem полоснозаграждающийToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem фильтрЧебышёваIIгоРодаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Cheb2Low;
         private System.Windows.Forms.ToolStripMenuItem cheb2H;
-        private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem Cheb2BandPass;
         private System.Windows.Forms.ToolStripMenuItem полоснозаграждающийToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem эллиптическийФильтрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lowEllip;
         private System.Windows.Forms.ToolStripMenuItem hPassEliptic;
-        private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ElepticBandPass;
         private System.Windows.Forms.ToolStripMenuItem полоснозаграждающийToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem биквадратичныйФильтрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фНЧToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem biQHPass;
-        private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem BiQBandPass;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private AI.Charts.Control.ChartVisual chartVisual1;
@@ -598,8 +612,8 @@
         private System.Windows.Forms.ToolStripMenuItem butterFilt;
         private System.Windows.Forms.ToolStripMenuItem BLowFilt;
         private System.Windows.Forms.ToolStripMenuItem bHpass;
-        private System.Windows.Forms.ToolStripMenuItem пФToolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem полоснозаграждающийToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem ButterBandPass;
+        private System.Windows.Forms.ToolStripMenuItem ButterBandStop;
         private System.Windows.Forms.ToolStripMenuItem loadFilt;
     }
 }
