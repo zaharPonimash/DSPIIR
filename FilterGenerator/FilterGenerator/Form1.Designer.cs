@@ -114,49 +114,49 @@
             // creatProject
             // 
             this.creatProject.Name = "creatProject";
-            this.creatProject.Size = new System.Drawing.Size(180, 22);
+            this.creatProject.Size = new System.Drawing.Size(177, 22);
             this.creatProject.Text = "Создать проект";
             this.creatProject.Click += new System.EventHandler(this.CreatProject_Click);
             // 
             // openProject
             // 
             this.openProject.Name = "openProject";
-            this.openProject.Size = new System.Drawing.Size(180, 22);
+            this.openProject.Size = new System.Drawing.Size(177, 22);
             this.openProject.Text = "Открыть проект";
             this.openProject.Click += new System.EventHandler(this.OpenProject_Click);
             // 
             // saveProj
             // 
             this.saveProj.Name = "saveProj";
-            this.saveProj.Size = new System.Drawing.Size(180, 22);
+            this.saveProj.Size = new System.Drawing.Size(177, 22);
             this.saveProj.Text = "Сохранить проект";
             this.saveProj.Click += new System.EventHandler(this.СохранитьПроектToolStripMenuItem_Click);
             // 
             // saveAs
             // 
             this.saveAs.Name = "saveAs";
-            this.saveAs.Size = new System.Drawing.Size(180, 22);
+            this.saveAs.Size = new System.Drawing.Size(177, 22);
             this.saveAs.Text = "Сохранить как";
             this.saveAs.Click += new System.EventHandler(this.SaveAs_Click);
             // 
             // saveFilt
             // 
             this.saveFilt.Name = "saveFilt";
-            this.saveFilt.Size = new System.Drawing.Size(180, 22);
+            this.saveFilt.Size = new System.Drawing.Size(177, 22);
             this.saveFilt.Text = "Сохранить фильтр";
             this.saveFilt.Click += new System.EventHandler(this.SaveFilt_Click);
             // 
             // loadFilt
             // 
             this.loadFilt.Name = "loadFilt";
-            this.loadFilt.Size = new System.Drawing.Size(180, 22);
+            this.loadFilt.Size = new System.Drawing.Size(177, 22);
             this.loadFilt.Text = "Загрузить фильтр";
             this.loadFilt.Click += new System.EventHandler(this.LoadFilt_Click);
             // 
             // exitBtn
             // 
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(180, 22);
+            this.exitBtn.Size = new System.Drawing.Size(177, 22);
             this.exitBtn.Text = "Выход";
             this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
@@ -444,7 +444,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.ОПрограммеToolStripMenuItem_Click);
             // 
@@ -452,7 +452,7 @@
             // 
             this.aboutProj.Enabled = false;
             this.aboutProj.Name = "aboutProj";
-            this.aboutProj.Size = new System.Drawing.Size(180, 22);
+            this.aboutProj.Size = new System.Drawing.Size(149, 22);
             this.aboutProj.Text = "О проекте";
             // 
             // projectStatus

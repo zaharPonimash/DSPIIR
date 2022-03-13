@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>лого ИИ ФР2.ico</ApplicationIcon>
+    <ApplicationIcon>IIR_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AI">
@@ -158,6 +158,7 @@
   <ItemGroup>
     <None Include="Resources\lowPass.png" />
     <None Include="Resources\noFilt.png" />
+    <Content Include="IIR_icon.ico" />
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\HPass.png" />
     <Content Include="лого ИИ ФР2.ico" />

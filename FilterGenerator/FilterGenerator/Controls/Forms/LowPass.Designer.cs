@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LowPass));
             this.lowFilter1 = new FilterGenerator.Controls.Filters.LowFilter();
             this.SuspendLayout();
             // 
             // lowFilter1
             // 
+            this.lowFilter1.FilterType = FilterGenLogic.FilterType.BandPass;
             this.lowFilter1.Location = new System.Drawing.Point(23, 63);
             this.lowFilter1.MaximumSize = new System.Drawing.Size(341, 309);
             this.lowFilter1.MinimumSize = new System.Drawing.Size(341, 309);
@@ -46,6 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 376);
             this.Controls.Add(this.lowFilter1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(374, 376);
             this.MinimumSize = new System.Drawing.Size(374, 376);
