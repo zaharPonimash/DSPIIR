@@ -94,10 +94,19 @@ namespace FilterGenerator
         private void SaveFilt_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "AI Framework (*.ai_fr_filter)|*.ai_fr_filter|Json (*.json)|*.json";
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                logic.SaveAsBinary(saveFile.FileName, project.Name);
+                switch (saveFile.FilterIndex)
+                {
+                    case 1:
+                        logic.SaveFilterAsBinary(saveFile.FileName, project.Name);
+                        break;
+                    case 2:
+                        logic.SaveFilterAsJson(saveFile.FileName, project.Name);
+                        break;
+                }
             }
         }
 
@@ -105,11 +114,21 @@ namespace FilterGenerator
         // Загрузить фильтр
         private void LoadFilt_Click(object sender, EventArgs e)
         {
-            OpenFileDialog saveFile = new OpenFileDialog();
+            OpenFileDialog loadF = new OpenFileDialog();
+            loadF.Filter = "AI Framework (*.ai_fr_filter)|*.ai_fr_filter|Json (*.json)|*.json";
 
-            if (saveFile.ShowDialog() == DialogResult.OK)
+
+            if (loadF.ShowDialog() == DialogResult.OK)
             {
-                logic.LoadAsBinary(saveFile.FileName);
+                switch (loadF.FilterIndex) 
+                {
+                    case 1:
+                        logic.LoadFilterAsBinary(loadF.FileName);
+                        break;
+                    case 2:
+                        logic.LoadFilterAsJson(loadF.FileName);
+                        break;
+                }
             }
         }
         #endregion

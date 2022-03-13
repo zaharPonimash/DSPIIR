@@ -173,7 +173,7 @@
             // freqResp
             // 
             this.freqResp.Name = "freqResp";
-            this.freqResp.Size = new System.Drawing.Size(180, 22);
+            this.freqResp.Size = new System.Drawing.Size(101, 22);
             this.freqResp.Text = "АЧХ";
             this.freqResp.Click += new System.EventHandler(this.FreqResp_Click);
             // 
@@ -181,14 +181,14 @@
             // 
             this.лЧМToolStripMenuItem.Enabled = false;
             this.лЧМToolStripMenuItem.Name = "лЧМToolStripMenuItem";
-            this.лЧМToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.лЧМToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.лЧМToolStripMenuItem.Text = "ЛЧМ";
             // 
             // аМКToolStripMenuItem
             // 
             this.аМКToolStripMenuItem.Enabled = false;
             this.аМКToolStripMenuItem.Name = "аМКToolStripMenuItem";
-            this.аМКToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.аМКToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.аМКToolStripMenuItem.Text = "АМК";
             // 
             // iirGenMenu
@@ -414,14 +414,14 @@
             // фНЧToolStripMenuItem4
             // 
             this.фНЧToolStripMenuItem4.Name = "фНЧToolStripMenuItem4";
-            this.фНЧToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.фНЧToolStripMenuItem4.Size = new System.Drawing.Size(100, 22);
             this.фНЧToolStripMenuItem4.Text = "ФНЧ";
             this.фНЧToolStripMenuItem4.Click += new System.EventHandler(this.ФНЧToolStripMenuItem4_Click);
             // 
             // biQHPass
             // 
             this.biQHPass.Name = "biQHPass";
-            this.biQHPass.Size = new System.Drawing.Size(180, 22);
+            this.biQHPass.Size = new System.Drawing.Size(100, 22);
             this.biQHPass.Text = "ФВЧ";
             this.biQHPass.Click += new System.EventHandler(this.BiQHPass_Click);
             // 
@@ -429,7 +429,7 @@
             // 
             this.BiQBandPass.Enabled = false;
             this.BiQBandPass.Name = "BiQBandPass";
-            this.BiQBandPass.Size = new System.Drawing.Size(180, 22);
+            this.BiQBandPass.Size = new System.Drawing.Size(100, 22);
             this.BiQBandPass.Text = "ПФ";
             // 
             // справкаToolStripMenuItem

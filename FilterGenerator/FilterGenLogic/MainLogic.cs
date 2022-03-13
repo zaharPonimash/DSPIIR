@@ -7,6 +7,7 @@ using System;
 namespace FilterGenLogic
 {
     // Основная логика
+    [Serializable]
     public class MainLogic
     {
         // Параметры фильтра
@@ -18,8 +19,8 @@ namespace FilterGenLogic
         //Груповая задержка
         public Vector GroupDel { get; set; }
 
-        private string filterType;
-        private string fCut;
+        internal string filterType;
+        internal string fCut;
 
         /// <summary>
         /// Полюса фильтров
@@ -370,27 +371,6 @@ namespace FilterGenLogic
             return new Tuple<Vector, Vector>(frequencyResponse.Freq, ampl);
         }
         #endregion
-
-        // Сохранение фильтра
-        public void SaveAsBinary(string path, string projectName)
-        {
-            IIRFilter iIRFilter = new IIRFilter(a, b)
-            {
-                Name = string.Format("filter {0}, freq cut {1}, project {2}", filterType, fCut, projectName)
-            };
-            iIRFilter.Save(path);
-        }
-
-
-        // Сохранение фильтра
-        public void LoadAsBinary(string path)
-        {
-            IIRFilter iIRFilter = IIRFilter.Load(path);
-            a = iIRFilter.A;
-            a = a.CutAndZero(a.Count / 2);
-            b = iIRFilter.B;
-            b = b.CutAndZero(b.Count / 2);
-        }
 
         // Фильтр
         public void CreateF(AI.BackEnds.DSP.NWaves.Filters.Base64.IirFilter64 filter)

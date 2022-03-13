@@ -52,6 +52,7 @@
     <Compile Include="MainLogic.cs" />
     <Compile Include="ProjectSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveLoad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
