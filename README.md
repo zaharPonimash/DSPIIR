@@ -8,6 +8,8 @@
 
 * ## Использование программы
 
+* В видео показан процесс создания, тестирования, сохранения и загрузки фильтра
+
 [<img src="https://github.com/zaharPonimash/DSPIIR/blob/master/img/Video.PNG?raw=true" width=650 />](https://youtu.be/hrC6DS7lJ2A)
 
 * #### Реализовано на базе [AI Framework 2.2](https://github.com/AIFramework/AIFrameworkOpen)
